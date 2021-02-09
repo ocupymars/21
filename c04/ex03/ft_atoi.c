@@ -1,23 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wlaureen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 18:32:46 by wlaureen          #+#    #+#             */
-/*   Updated: 2021/02/09 16:20:12 by wlaureen         ###   ########.fr       */
+/*   Created: 2021/02/09 20:08:20 by wlaureen          #+#    #+#             */
+/*   Updated: 2021/02/09 21:59:49 by wlaureen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putstr(char *str)
+int		ft_atoi(char *str)
 {
 	int		i;
+	int		nbr;
+	int		znak;
 
+	nbr = 0;
+	znak = 1;
 	i = 0;
-	while (str[i])
+	while ((str[i] == '\t') || (str[i] == '\n') || (str[i] == '\v') ||
+			(str[i] == '\f') || (str[i] == '\r') || (str[i] == ' '))
+		i++;
+	while (str[i] == '+' || str[i] == '-')
 	{
-		ft_putstr(str);
+		if (str[i++] == '-')
+			znak *= -1;
+	}
+	while (str[i] && (str[i] >= '0') && (str[i] <= '9'))
+	{
+		nbr *= 10;
+		nbr += (int)str[i] - '0';
 		i++;
 	}
+	if (znak == -1)
+		return (-nbr);
+	else
+		return (nbr);
 }

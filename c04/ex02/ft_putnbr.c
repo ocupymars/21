@@ -1,21 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wlaureen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 16:31:16 by wlaureen          #+#    #+#             */
-/*   Updated: 2021/02/09 16:05:42 by wlaureen         ###   ########.fr       */
+/*   Created: 2021/02/09 16:22:36 by wlaureen          #+#    #+#             */
+/*   Updated: 2021/02/09 20:06:16 by wlaureen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
-{
-	int		i;
+#include <unistd.h>
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
+	{
+		ft_putnbr(nb / 10);
+		ft_putchar('8');
+	}
+	else if (nb < 0)
+	{
+		ft_putchar('-');
+		ft_putnbr(-nb);
+	}
+	else
+	{
+		if (nb > 9)
+			ft_putnbr(nb / 10);
+		ft_putchar(48 + nb % 10);
+	}
 }
