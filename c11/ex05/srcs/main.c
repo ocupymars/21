@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wlaureen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/17 17:05:39 by wlaureen          #+#    #+#             */
+/*   Updated: 2021/02/17 17:06:14 by wlaureen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_operation.h"
 #include "ft_boolean.h"
 #include "ft_str.h"
@@ -35,7 +47,7 @@ void	ft_do_operation(int a, int b, char operator)
 	static int	(*operations[5])(int, int) = {
 			&ft_operation_add,
 			&ft_operation_minus,
-			&ft_operation_devide,
+			&ft_operation_divide,
 			&ft_operation_multiply,
 			&ft_operation_modulo
 	};
