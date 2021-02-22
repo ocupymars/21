@@ -1,10 +1,10 @@
 NAME = bsq
-SRCS = /Users/ocupymars/Downloads/bsq/bsq/srcs/main.c /Users/ocupymars/Downloads/bsq/bsq/srcs/grid_parsing.c /Users/ocupymars/Downloads/bsq/bsq/srcs/map_parsing.c ./Users/ocupymars/Downloads/bsq/bsq/srcs/map_solving.c /Users/ocupymars/Downloads/bsq/bsq/srcs/utilities.c
+SRCS = ./main.c ./grid_parsing.c ./map_parsing.c ./map_solving.c ./utilities.c
 OBJS = $(SRCS:.c=.o)
 FLAGS = -Wall -Wextra -Werror
 
 .c.o:
-			cc $(FLAGS) -c $< -o $(<:.c=.o) -I .
+			gcc $(FLAGS) -c $< -o $(<:.c=.o) -I.
 
 $(NAME):	$(OBJS)
 			gcc $(FLAGS) $(OBJS) -o $(NAME)

@@ -10,6 +10,12 @@ void	ft_putstr(int channel, char *str)
 	write(channel, str, i);
 }
 
+int		ft_atoi(char *str)
+{
+	(void)str;
+	return (0);
+}
+
 char	get_char(t_map *map, int i, int j)
 {
 	if (map->grid[i][j] == 0)

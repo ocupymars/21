@@ -32,4 +32,5 @@ void			free_grid(t_map *map);
 void			process_map(t_map *map);
 void			handle_map(t_map *map);
 void			ft_putstr(int channel, char *str);
+
 #endif
