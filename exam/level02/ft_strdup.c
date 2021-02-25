@@ -19,7 +19,7 @@ char	*ft_strdup(char *src)
 	char	*dest;
 
 	length = ft_strlen(src);
-	if ((dest = (char*)malloc((length + 1) * sizeof(char*))) == NULL)
+	if ((dest = (char*)malloc((length + 1) * sizeof(char))) == NULL)
 		return (0);
 	i = 0;
 	while (src[i])
@@ -29,6 +29,8 @@ char	*ft_strdup(char *src)
 	}
 	dest[i] = '\0';
 	return (dest);
+
+	free(dest);
 	
 }
 

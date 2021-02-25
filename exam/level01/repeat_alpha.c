@@ -7,33 +7,43 @@ void	ft_putchar(char c)
 
 int		icheck(char s)
 {
-	int		i;
+	int		repeat;
 	
 	if (s >= 'a' && s <= 'z')
-		i = s - 'a' + 1;
-	else if (s >= 'A' && s <= 'Z')
-		i = s - 'A' + 1;
-	else
-		i = 1;
-	return (i);
+		repeat =  s - 'a' + 1;
+		//return (repeat);
+	else if (s >= 'A' && s <= 'Z') 	
+	{
+		repeat = s - 'A' + 1;
+		//return (repeat);
+	}
+	else 	
+		repeat = 1;
+	return  (1);
 }
 
 int		main(int argc, char **argv)
 {
-	int		i;
+	int		index;
+	//int		i;
 
-	if (argc == 2)
+	//i = 0;
+ 	if (argc != 2)
 	{
-		while (*argv[1])
-		{ 	
-			i =  icheck(*argv[1]);
-			while (i--)
-			{
-				ft_putchar(*argv[1]);
-				argv[i]++;
-			}
-		}	
-
+		write(1, "\n", 1);
+		return (0);
 	}
-	ft_putchar('\n');
+	
+	while (*argv[1])
+	{ 	
+		index =  icheck(*argv[1]);
+		while (index > 0)
+		{
+			ft_putchar(*argv[1]);
+			index--;
+		}
+		argv[1]++;
+	}
+	write(1, "\n", 1);
+	return (0);
 }
