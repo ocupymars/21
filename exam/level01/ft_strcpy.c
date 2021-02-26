@@ -19,7 +19,7 @@ int		main(void)
 	char	*str2;
 	int		i;
 
-	str2 = "hello";
+	str2 = "hello world!";
 	i = 0;
 	while (str2[i])
 	{
